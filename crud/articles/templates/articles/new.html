@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block body %}
-<h2>게시물 작성하기</h2>
+<h2>New Article</h2>
 <form action="/articles/create/">
-    title:<input type="text" name="title">
+    title: <input type="text" name="title">
     <br>
-    content:<textarea name="content" cols="30" rows="15"></textarea>
+    content:<br><textarea name="content" cols="30" rows="15"></textarea>
     <br>
     <input type="submit" value="Send">
     <a href="/articles/">Back</a>

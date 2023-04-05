@@ -1,10 +1,27 @@
 {% extends 'base.html' %}
 {% block body %}
-<h2>게시판</h2>
+<h1>게시판</h1>
 <a href="/articles/new/">New</a>
-{% for article in articles %}
-    <h2>제목 : {{ article.title }}</h2>
-    <h2>내용 : {{ article.content }}</h2>
-    <a href="/articles/{{ article.pk }}">DETAIL</a>
-{% endfor %}
+<div class="container my-3">
+    <table class="table">
+        <thead>
+        <tr class="table-dark">
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>자세한 내용</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ article.title }}</td>
+            <td>{{ article.content }}</td>
+            <td><a href="/articles/{{ article.pk }}">DETAIL</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
